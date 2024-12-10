@@ -3,7 +3,7 @@
   src: url(./fonts/Yekan\ Bakh\ Regular.ttf);
 }
 
-body {
+.body {
   max-width: 1440px;
   margin: auto;
   font-family: yekanbach;

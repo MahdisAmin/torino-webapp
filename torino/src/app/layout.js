@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
   };
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className={styles.body}>
         <TanstackQueryProvider>
           <header className={styles.container}>
             <div className={styles.logoMenu}>
