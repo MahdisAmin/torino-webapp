@@ -16,6 +16,11 @@
   background-color: #fff;
   justify-content: space-around;
 }
+.container a{
+  text-decoration: none;
+  cursor: pointer;
+  color: #28a745;
+}
 .logoMenu {
   display: flex;
   justify-content: space-around;

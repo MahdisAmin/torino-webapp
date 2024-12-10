@@ -13,7 +13,19 @@ async function fetchData(id) {
 
 async function DetailPage({ params }) {
   const data = await fetchData(params.id);
-  const { image, title, startDate, endDate, options, price } = data;
+  console.log(data);
+  const {
+    image,
+    title,
+    startDate,
+    endDate,
+    options,
+    price,
+    origin,
+    fleetVehicle,
+    availableSeats,
+    insurance,
+  } = data;
   console.log(title);
   const day = howmanyDats(startDate, endDate);
   const night = +day - 1;
@@ -41,40 +53,34 @@ async function DetailPage({ params }) {
         </div>
         <div className={styles.moreDetails}>
           <div>
-            <span>
-              <TbRouteSquare />
-              مبدا
-            </span>
+            <TbRouteSquare />
+            <span>مبدا</span>
+            <p>{origin.name}</p>
           </div>
           <div>
-            <span>
-              <FaCalendarAlt />
-              تاریخ رفت
-            </span>
+            <FaCalendarAlt />
+            <span>تاریخ رفت</span>
+            <p>{startDate.split("T")[0]}</p>
           </div>
           <div>
-            <span>
-              <FaCalendarAlt />
-              تاریخ برگشت
-            </span>
+            <FaCalendarAlt />
+            <span>تاریخ برگشت</span>
+            <p>{endDate.split("T")[0]}</p>
           </div>
           <div>
-            <span>
-              <FaBusSimple />
-              حمل و نقل
-            </span>
+            <FaBusSimple />
+            <span>حمل و نقل</span>
+            <p>{fleetVehicle}</p>
           </div>
           <div>
-            <span>
-              <HiUsers />
-              ظرفیت
-            </span>
+            <HiUsers />
+            <span>ظرفیت</span>
+            <p> حداکثر {toPersianNumber(availableSeats)} نفر</p>
           </div>
           <div style={{ border: "none" }}>
-            <span>
-              <SiSpringsecurity />
-              بیمه
-            </span>
+            <SiSpringsecurity />
+            <span>بیمه</span>
+            <p>{insurance ? "دارد" : "ندارد"}</p>
           </div>
         </div>
       </div>

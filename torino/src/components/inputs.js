@@ -11,8 +11,7 @@ function Inputs() {
       <input placeholder="مبدا" />
       <TbWorldSearch className={styles.icon} />
       <input placeholder="مقصد" />
-      <IoCalendarOutline className={styles.icon} />
-      <input placeholder="تاریخ" style={{borderLeft:"none"}} />
+      <input placeholder="تاریخ" style={{borderLeft:"none"}} type="date" />
       <button>جستجو</button>
     </div>
   );

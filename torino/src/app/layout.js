@@ -8,7 +8,7 @@ import Footer from "../components/element/Footer";
 import Auth from "@/components/modal/Auth";
 import TanstackQueryProvider from "@/components/provider/TanstackQueryProvider";
 import api from "@/services/api";
-
+import Link from "next/link";
 
 export default function RootLayout({ children }) {
   const [showModal, setShowModal] = useState(false);
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   };
   const logoutHandler = () => {
     console.log("i am exit");
-    
+
     // deleteCookie("accessToken");
     // deleteCookie("refreshToken");
   };
@@ -56,7 +56,9 @@ export default function RootLayout({ children }) {
                 alt="torinologo"
               ></Image>
               <ul>
-                <li>صفحه اصلی</li>
+                <Link href="/">
+                  <li>صفحه اصلی</li>
+                </Link>
                 <li>خدمات گردشگری</li>
                 <li>درباره ما</li>
                 <li>تماس با ما</li>
