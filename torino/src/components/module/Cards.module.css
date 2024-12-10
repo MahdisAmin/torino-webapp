@@ -1,0 +1,51 @@
+.whole{
+  margin: auto;
+}
+.container {
+  width: 278.44px;
+  height: 277px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 0px #00000040;
+  margin-bottom: 40px;
+}
+.container p {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #000000;
+}
+.container span {
+  word-spacing: 4px;
+  color: #282828b2;
+  font-size: 15px;
+}
+.description {
+  border-bottom: 1px solid #2828282a;
+  margin-top: 0;
+}
+.description p , .description span{
+ margin-right: 10px;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.price button {
+    cursor: pointer;
+  width: 64px;
+  height: 25px;
+  padding: 12px;
+  line-height: 0px;
+  border-radius: 4px;
+  background: #28a745;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+}
+.price p{
+    font-size: 16px;
+    font-weight: 400;
+     color: #28a745;
+}

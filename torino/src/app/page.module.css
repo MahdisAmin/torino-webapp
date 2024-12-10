@@ -1,0 +1,37 @@
+.page {
+  margin: auto;
+}
+.page img {
+  width: 100%;
+}
+.decription {
+  width: 100%;
+  text-align: center;
+  word-spacing: 3px;
+}
+.decription p {
+  font-size: 28px;
+  font-weight: 28px;
+  color: #595959;
+}
+.decription span {
+  color: #28a745;
+  margin-left: 5px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px;
+  margin-top:10px ;
+}
+.page h3 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 49.6px;
+  text-align: right;
+  margin-right: 75px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}

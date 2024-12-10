@@ -1,0 +1,121 @@
+@font-face {
+  font-family: yekanbach;
+  src: url(./fonts/Yekan\ Bakh\ Regular.ttf);
+}
+html,
+body {
+  max-width: 1440px;
+  margin: auto;
+  font-family: yekanbach;
+  font-weight: 500;
+  background-color: #fff;
+}
+.container {
+  height: 74px;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-around;
+}
+.logoMenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-right: 50px; */
+}
+.container ul {
+  display: flex;
+}
+.container li {
+  list-style: none;
+  padding-right: 50px;
+}
+/* .link {
+} */
+.link button {
+  color: #28a745;
+  background-color: transparent;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  width: 156px;
+  height: 44px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.link span {
+  margin-left: 8px;
+  text-align: center;
+}
+.link img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -6px;
+  margin-left: 6px;
+}
+.footer {
+  height: 306px;
+  background-color: #fff;
+}
+
+.topMain {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #00000033;
+  border-bottom: 1px solid #00000033;
+}
+.right {
+  display: flex;
+}
+.right div {
+  margin: 20px 50px;
+  line-height: 30px;
+}
+.left {
+  margin-left: 70px;
+  margin-top: 20px;
+}
+.left div {
+  padding-top: 5px;
+}
+.left img {
+  padding: 20px;
+}
+.info {
+  direction: ltr;
+  margin-left: 20px;
+}
+.downSide {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #fff;
+
+}
+.link select {
+  width: 180px;
+  height: Hug (44px) px;
+  border: none;
+  color: #28a745;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  margin-top: 15px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 4px;
+  border-radius: 8px;
+  font-family: inherit;
+  opacity: 0px;
+}
+.link option{
+  color: black;
+}
+.link option:last-child{
+  color: red;
+}

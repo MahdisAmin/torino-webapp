@@ -1,0 +1,12 @@
+@font-face {
+  font-family: yekanbach;
+  src: url(./fonts/Yekan\ Bakh\ Regular.ttf);
+}
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+html,
+body {
+  margin: auto;
+  max-width: 1440px;
+  font-family: yekanbach;
+}
