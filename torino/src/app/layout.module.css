@@ -101,9 +101,10 @@
   background-color: #fff;
 
 }
+
 .link select {
   width: 180px;
-  height: Hug (44px) px;
+  height: 44px;
   border: none;
   color: #28a745;
   text-align: center;

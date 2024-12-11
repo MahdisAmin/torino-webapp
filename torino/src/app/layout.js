@@ -8,6 +8,7 @@ import Footer from "../components/element/Footer";
 import Auth from "@/components/modal/Auth";
 import TanstackQueryProvider from "@/components/provider/TanstackQueryProvider";
 import api from "@/services/api";
+import { toPersianNumber } from "@/utils/extras";
 import Link from "next/link";
 
 export default function RootLayout({ children }) {
@@ -67,7 +68,9 @@ export default function RootLayout({ children }) {
             <div className={styles.link}>
               {userData ? (
                 <select>
-                  <option>{userData.mobile || "شماره نامشخص"}</option>
+                  <option>
+                    {toPersianNumber(userData.mobile) || "شماره نامشخص"}
+                  </option>
                   <option>اطلاعات حساب</option>
                   <option onChange={logoutHandler}>خروج از حساب</option>
                 </select>
