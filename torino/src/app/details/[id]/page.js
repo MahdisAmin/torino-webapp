@@ -48,7 +48,11 @@ async function DetailPage({ params }) {
               <p>
                 {toPersianNumber(price)} <span>تومان</span>
               </p>
-              <Link href="/user" >رزرو و خرید</Link>
+              <Link
+                href={`/user?title=${title}&price=${price}&startDate=${startDate}&endDate=${endDate}`}
+              >
+                رزرو و خرید
+              </Link>
             </div>
           </div>
         </div>
