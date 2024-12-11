@@ -51,7 +51,7 @@ function Signup({ mobile, setStep, close, setMobile }) {
               type="number"
               onChange={(e) => setMobile(e.target.value)}
             />
-            {!!error && <p className="text-red-500">{error}</p>}
+            {!!error && <p className={styles.error}>{error}</p>}
 
             <button onClick={sendCodeHandler}>ارسال کد تایید</button>
           </div>
