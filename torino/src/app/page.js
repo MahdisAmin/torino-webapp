@@ -8,7 +8,7 @@ import WhyTorino from "../components/element/WhyTorino";
 export default async function Home() {
   const data = await getServerSideProps();
   return (
-    <div className={styles.page}>
+    <div className={styles.page} >
       <main className={styles.main}>
         <Image
           src="/images/banner.png"
