@@ -5,6 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { HiUsers } from "react-icons/hi2";
 import { SiSpringsecurity } from "react-icons/si";
 import { FaBusSimple } from "react-icons/fa6";
+import Link from "next/link";
 async function fetchData(id) {
   const res = await fetch(`http://localhost:6500/tour/${id}`);
   const data = res.json();
@@ -47,7 +48,7 @@ async function DetailPage({ params }) {
               <p>
                 {toPersianNumber(price)} <span>تومان</span>
               </p>
-              <button>رزرو و خرید</button>
+              <Link href="/user" >رزرو و خرید</Link>
             </div>
           </div>
         </div>

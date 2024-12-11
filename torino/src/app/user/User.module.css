@@ -1,0 +1,51 @@
+.container {
+  background-color: #e8ebec;
+  padding: 50px;
+  height: 500px;
+}
+.container form{
+    display: flex;
+    justify-content: space-between;
+}
+.input{
+    width: 885px;
+    height: 228px;
+    border: 1px solid #00000033;
+    background-color: #ffff;
+    padding: 8px;
+    border-radius: 10px;
+}
+.container input{
+    width: 262px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px 8px 20px 5px;
+    font-family: inherit;
+    padding: 8px;
+    border: 1px solid #00000080;
+}
+
+.tourCard{
+    width: 307px;
+    height: 228px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    outline: none;
+    justify-content: flex-end;
+}
+.tourCard button{
+    width: 283px;
+    height: 56px;
+    border-radius: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 24px;
+
+}

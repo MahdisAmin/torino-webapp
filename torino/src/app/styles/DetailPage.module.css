@@ -51,7 +51,7 @@
   font-size: 14px;
   color: #282828;
 }
-.reserve button {
+.reserve a {
   width: 204px;
   height: 56px;
   background-color: #28a745;
@@ -59,7 +59,10 @@
   font-family: inherit;
   font-size: 24px;
   cursor: pointer;
-  border: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   margin-left: 50px;
 }
@@ -81,7 +84,7 @@
   margin: 0 8px 0 0px;
   font-size: 18px;
 }
-.moreDetails p{
+.moreDetails p {
   color: #000000;
   font-size: 16px;
 }
