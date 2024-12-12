@@ -5,6 +5,7 @@ import styles from "./User.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaUser } from "react-icons/fa6";
 import { howmanyDats, toPersianNumber } from "@/utils/extras";
+import { Suspense } from "react";
 
 function UserInfo() {
   const params = useSearchParams();
@@ -54,20 +55,22 @@ function UserInfo() {
           />
           {errors.name && <span> این فیلد الزامی است </span>}
         </div>
-        <div className={styles.tourCard}>
-          <div className={styles.tourTitle}>
-            <h1>{title}</h1>
-            <p>
-              {toPersianNumber(day)} روز و {toPersianNumber(night)} شب
-            </p>
+        <Suspense>
+          <div className={styles.tourCard}>
+            <div className={styles.tourTitle}>
+              <h1>{title}</h1>
+              <p>
+                {toPersianNumber(day)} روز و {toPersianNumber(night)} شب
+              </p>
+            </div>
+            <div className={styles.price}>
+              <p>قیمت نهایی</p>
+              <span> {toPersianNumber(price)} </span>
+              تومان
+            </div>
+            <button type="submit"> ثبت و خرید نهایی </button>
           </div>
-          <div className={styles.price}>
-            <p>قیمت نهایی</p>
-            <span> {toPersianNumber(price)} </span>
-            تومان
-          </div>
-          <button type="submit"> ثبت و خرید نهایی </button>
-        </div>
+        </Suspense>
       </form>
     </div>
   );
