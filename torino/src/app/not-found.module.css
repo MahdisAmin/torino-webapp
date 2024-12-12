@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.container div {
+  color: #282828;
+  font-size: 36px;
+  text-align: center;
+  margin-left: 70px;
+}
+.container a {
+  text-decoration: none;
+  width: 361px;
+  height: 75px;
+  background-color: #d8ffe1;
+  color: #28a745;
+  font-size: 28px;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: auto;
+    font-size: 22px;
+  }
+}
