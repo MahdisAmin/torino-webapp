@@ -25,7 +25,7 @@ function UserInfo() {
     console.log("hi");
   };
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.input}>
