@@ -5,7 +5,7 @@ import styles from "./User.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaUser } from "react-icons/fa6";
 import { howmanyDats, toPersianNumber } from "@/utils/extras";
-import { Suspense } from "react";
+
 
 function UserInfo() {
   const params = useSearchParams();
@@ -25,7 +25,7 @@ function UserInfo() {
     console.log("hi");
   };
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    
       <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.input}>
@@ -72,7 +72,7 @@ function UserInfo() {
           </div>
         </form>
       </div>
-    </Suspense>
+    
   );
 }
 
