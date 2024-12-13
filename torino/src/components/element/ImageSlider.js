@@ -14,14 +14,14 @@ const ImageSlider = ({ images }) => {
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={3} // تعداد اسلایدهای نمایان
-        spaceBetween={-30} // فاصله بین اسلایدها
+        slidesPerView={3} 
+        spaceBetween={-30} 
         coverflowEffect={{
           rotate: 0,
-          stretch: 180, // فاصله و عمق نمایش اسلایدهای پشت
+          stretch: 180, 
           depth: 100,
           modifier: 1,
-          slideShadows: true, // نمایش سایه برای اسلایدها
+          slideShadows: true,
         }}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
