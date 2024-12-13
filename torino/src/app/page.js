@@ -6,7 +6,8 @@ import Banner from "../components/element/Banner";
 import WhyTorino from "../components/element/WhyTorino";
 
 export default async function Home() {
-  const data = await getServerSideProps();
+     const res = await fetch("http://localhost:6500/tour" , {cache:"no-store"});
+     const data = await res.json();
   return (
     <div className={styles.page} >
       <main className={styles.main}>
@@ -36,10 +37,3 @@ export default async function Home() {
   );
 }
 
-async function getServerSideProps() {
-  const res = await fetch("http://localhost:6500/tour");
-  const data = await res.json();
-  // console.log(data);
-
-  return data;
-}
