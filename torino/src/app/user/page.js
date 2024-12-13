@@ -1,21 +1,17 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import styles from "./User.module.css";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa6";
 import { howmanyDats, toPersianNumber } from "@/utils/extras";
-import { Suspense } from "react";
 
-function UserInfo() {
-  // const params = useSearchParams();
-  // const title = params.get("title");
-  // const price = params.get("price");
-  // const startDate = params.get("startDate");
-  // const endDate = params.get("endDate");
+function UserInfo(params) {
+  const { searchParams } = params;
+  console.log(searchParams);
+  const { title, price, startDate, endDate } = searchParams;
 
-  // const day = howmanyDats(startDate, endDate);
-  // const night = +day - 1;
+  const day = howmanyDats(startDate, endDate);
+  const night = +day - 1;
   const {
     register,
     handleSubmit,
@@ -55,22 +51,20 @@ function UserInfo() {
           />
           {errors.name && <span> این فیلد الزامی است </span>}
         </div>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-          <div className={styles.tourCard}>
-            <div className={styles.tourTitle}>
-              <h1>{title}</h1>
-              <p>
-                {toPersianNumber(day)} روز و {toPersianNumber(night)} شب
-              </p>
-            </div>
-            <div className={styles.price}>
-              <p>قیمت نهایی</p>
-              <span> {toPersianNumber(price)} </span>
-              تومان
-            </div>
-            <button type="submit"> ثبت و خرید نهایی </button>
+        <div className={styles.tourCard}>
+          <div className={styles.tourTitle}>
+            <h1>{title}</h1>
+            <p>
+              {toPersianNumber(day)} روز و {toPersianNumber(night)} شب
+            </p>
           </div>
-        </Suspense> */}
+          <div className={styles.price}>
+            <p>قیمت نهایی</p>
+            <span> {toPersianNumber(price)} </span>
+            تومان
+          </div>
+          <button type="submit"> ثبت و خرید نهایی </button>
+        </div>
       </form>
     </div>
   );

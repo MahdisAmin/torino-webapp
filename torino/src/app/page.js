@@ -6,10 +6,10 @@ import Banner from "../components/element/Banner";
 import WhyTorino from "../components/element/WhyTorino";
 
 export default async function Home() {
-     const res = await fetch("http://localhost:6500/tour" , {cache:"no-store"});
-     const data = await res.json();
+  const res = await fetch("http://localhost:6500/tour", { cache: "no-store" });
+  const data = await res.json();
   return (
-    <div className={styles.page} >
+    <div className={styles.page}>
       <main className={styles.main}>
         <Image
           src="/images/banner.png"
@@ -36,4 +36,3 @@ export default async function Home() {
     </div>
   );
 }
-

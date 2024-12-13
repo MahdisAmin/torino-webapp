@@ -7,7 +7,9 @@ import { SiSpringsecurity } from "react-icons/si";
 import { FaBusSimple } from "react-icons/fa6";
 import Link from "next/link";
 async function fetchData(id) {
-  const res = await fetch(`http://localhost:6500/tour/${id}`);
+  const res = await fetch(`http://localhost:6500/tour/${id}`, {
+    cache: "no-store",
+  });
   const data = res.json();
   return data;
 }
