@@ -5,10 +5,13 @@ import { useForm } from "react-hook-form";
 import { FaUser } from "react-icons/fa6";
 import { howmanyDats, toPersianNumber } from "@/utils/extras";
 
+
 function UserInfo(params) {
   const { searchParams } = params;
   console.log(searchParams);
   const { title, price, startDate, endDate } = searchParams;
+
+  
 
   const day = howmanyDats(startDate, endDate);
   const night = +day - 1;

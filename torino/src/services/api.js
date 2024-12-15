@@ -33,7 +33,7 @@ api.interceptors.response.use(
       orginialRequest._retry = true;
 
       const res = await getNewTokens();
-      if (res?.response?.status === 201) {
+      if (res?.response?.status === 200) {
         setCookie("accessToken", res?.response?.data.accessToken, 30);
         setCookie("refreshToken", res?.response?.data.refreshToken, 360);
         return api(orginialRequest);
@@ -64,3 +64,4 @@ const getNewTokens = async () => {
     return { error };
   }
 };
+export {getNewTokens}

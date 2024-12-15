@@ -6,6 +6,7 @@ import { HiUsers } from "react-icons/hi2";
 import { SiSpringsecurity } from "react-icons/si";
 import { FaBusSimple } from "react-icons/fa6";
 import Link from "next/link";
+import moment from "jalali-moment";
 async function fetchData(id) {
   const res = await fetch(`http://localhost:6500/tour/${id}`, {
     cache: "no-store",
@@ -29,7 +30,13 @@ async function DetailPage({ params }) {
     availableSeats,
     insurance,
   } = data;
-  console.log(title);
+
+  const perStartDay = moment(startDate, "YYYY-MM-DD")
+    .locale("fa")
+    .format("jD jMMMM jYYYY");
+  const perEndtDay = moment(endDate, "YYYY-MM-DD")
+    .locale("fa")
+    .format("jD jMMMM jYYYY");
   const day = howmanyDats(startDate, endDate);
   const night = +day - 1;
   return (
@@ -67,12 +74,12 @@ async function DetailPage({ params }) {
           <div>
             <FaCalendarAlt />
             <span>تاریخ رفت</span>
-            <p>{startDate.split("T")[0]}</p>
+            <p>{perStartDay}</p>
           </div>
           <div>
             <FaCalendarAlt />
             <span>تاریخ برگشت</span>
-            <p>{endDate.split("T")[0]}</p>
+            <p>{perEndtDay}</p>
           </div>
           <div>
             <FaBusSimple />
