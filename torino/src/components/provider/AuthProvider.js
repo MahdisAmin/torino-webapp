@@ -1,7 +1,7 @@
 "use client"
 
 import { useGetUserData } from '@/core/services/query'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 function AuthProvider({ children }) {
@@ -9,7 +9,7 @@ function AuthProvider({ children }) {
     const { isPending, data } = useGetUserData()
     
     useEffect(() => {
-        if(!isPending && data?.data) router.push("/")
+        if(!isPending && !data?.data) router.push("/")
     }, [isPending])
     if (isPending) return <h1>Loading...</h1>
     

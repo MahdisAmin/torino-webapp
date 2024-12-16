@@ -18,22 +18,7 @@ export default function RootLayout({ children }) {
   const [showModal, setShowModal] = useState(false);
   const [userData, setUserData] = useState(null);
  
-  
 
-  const checkAuth =  () => {
-    const accessToken = getCookie("accessToken");
-
-    if (!accessToken) return;
-    try {
-      const response = useGetUserData()
-      setUserData(response.data);
-    } catch (error) {
-      console.error("Failed to fetch user profile:", error);
-    }
-  };
-  useEffect(() => {
-    checkAuth();
-  }, []);
 
   const enterHandler = () => {
     setShowModal(true);
@@ -71,7 +56,7 @@ export default function RootLayout({ children }) {
               </ul>
             </div>
             <div className={styles.link}>
-              {userData ? (
+              {/* {userData ? (
                 <select>
                   <option>
                     {toPersianNumber(userData.mobile) || "شماره نامشخص"}
@@ -79,14 +64,14 @@ export default function RootLayout({ children }) {
                   <option>اطلاعات حساب</option>
                   <option onChange={logoutHandler}>خروج از حساب</option>
                 </select>
-              ) : (
+              ) : ( */}
                 <button onClick={enterHandler}>
                   <span>
                     <img src="/images/profile.png" />
                     ورود | ثبت نام
                   </span>
                 </button>
-              )}
+              {/* )} */}
             </div>
             <Auth
               show={!!showModal}
