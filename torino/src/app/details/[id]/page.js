@@ -17,7 +17,7 @@ async function fetchData(id) {
 
 async function DetailPage({ params }) {
   const data = await fetchData(params.id);
-  console.log(data);
+
   const {
     image,
     title,

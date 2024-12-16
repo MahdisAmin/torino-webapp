@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Signup.module.css";
-import { sendOtp } from "@/services/auth";
+import { sendOtp } from "@/core/services/mutations";
 import { isValidMobile, toPersianNumber } from "@/utils/extras";
 
 import { motion } from "framer-motion";

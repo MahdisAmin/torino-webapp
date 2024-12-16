@@ -6,21 +6,26 @@ import { useState, useEffect } from "react";
 import { getCookie } from "@/utils/cookie";
 import Footer from "../components/element/Footer";
 import Auth from "@/components/modal/Auth";
-import TanstackQueryProvider from "@/components/provider/TanstackQueryProvider";
-import api from "@/services/api";
+import TanstackQueryProvider from "../components/provider/TanstackQueryProvider";
+
 import { toPersianNumber } from "@/utils/extras";
 import Link from "next/link";
+import { useGetUserData } from "@/core/services/query";
+
 
 export default function RootLayout({ children }) {
+
   const [showModal, setShowModal] = useState(false);
   const [userData, setUserData] = useState(null);
+ 
+  
 
-  const checkAuth = async () => {
+  const checkAuth =  () => {
     const accessToken = getCookie("accessToken");
 
     if (!accessToken) return;
     try {
-      const response = await api.get("/user/profile");
+      const response = useGetUserData()
       setUserData(response.data);
     } catch (error) {
       console.error("Failed to fetch user profile:", error);

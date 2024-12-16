@@ -4,10 +4,9 @@ import OtpInput from "react18-input-otp";
 import styles from "./CodeModal.module.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { checkOtp } from "@/services/auth";
+import { checkOtp } from "@/core/services/mutations";
 import { setCookie } from "@/utils/cookie";
 export default function ReactOtpInput({ mobile, onLogin, setStep, show }) {
-
   if (!show) {
     return null;
   }
