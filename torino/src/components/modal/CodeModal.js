@@ -6,10 +6,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { checkOtp } from "@/core/services/mutations";
 import { setCookie } from "@/utils/cookie";
-export default function ReactOtpInput({ mobile, onLogin, setStep, show }) {
-  if (!show) {
-    return null;
-  }
+export default function ReactOtpInput({ mobile, setShowModal, setStep, show }) {
+  // if (!show) {
+  //   return null;
+  // }
   const [code, setCode] = useState("");
 
   const handleChange = (enteredOtp) => {
@@ -26,7 +26,7 @@ export default function ReactOtpInput({ mobile, onLogin, setStep, show }) {
         onSuccess: (data) => {
           setCookie("accessToken", data?.data?.accessToken, 30);
           setCookie("refreshToken", data?.data?.refreshToken, 365);
-          onLogin(mobile);
+          // setShowModal()
         },
         onError: (error) => {
           console.log(error);

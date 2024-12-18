@@ -7,10 +7,13 @@ import { isValidMobile, toPersianNumber } from "@/utils/extras";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-function Signup({ mobile, setStep, close, setMobile }) {
+function Signup({ mobile, setStep, close, setMobile, show }) {
   const { isPending, mutate } = sendOtp();
   const [error, setError] = useState("");
-
+  
+  if (!show) {
+    return null;
+  }
   const sendCodeHandler = () => {
     if (isPending) return;
     if (!isValidMobile(mobile)) return setError("شماره معتبر وارد کنید!");

@@ -2,38 +2,19 @@
 
 import Image from "next/image";
 import styles from "./layout.module.css";
-import { useState, useEffect } from "react";
-import { getCookie } from "@/utils/cookie";
+import { useState } from "react";
+
 import Footer from "../components/element/Footer";
 import Auth from "@/components/modal/Auth";
 import TanstackQueryProvider from "../components/provider/TanstackQueryProvider";
 
-import { toPersianNumber } from "@/utils/extras";
 import Link from "next/link";
-import { useGetUserData } from "@/core/services/query";
 
+import LoginButton from "@/components/LoginButton";
 
 export default function RootLayout({ children }) {
-
-  const [showModal, setShowModal] = useState(false);
-  const [userData, setUserData] = useState(null);
  
 
-
-  const enterHandler = () => {
-    setShowModal(true);
-  };
-
-  const buttonText = (mobile) => {
-    setUserData({ ...userData, mobile });
-    setShowModal(false);
-  };
-  const logoutHandler = () => {
-    console.log("i am exit");
-
-    // deleteCookie("accessToken");
-    // deleteCookie("refreshToken");
-  };
   return (
     <html lang="fa" dir="rtl">
       <body className={styles.body}>
@@ -55,29 +36,7 @@ export default function RootLayout({ children }) {
                 <li>تماس با ما</li>
               </ul>
             </div>
-            <div className={styles.link}>
-              {/* {userData ? (
-                <select>
-                  <option>
-                    {toPersianNumber(userData.mobile) || "شماره نامشخص"}
-                  </option>
-                  <option>اطلاعات حساب</option>
-                  <option onChange={logoutHandler}>خروج از حساب</option>
-                </select>
-              ) : ( */}
-                <button onClick={enterHandler}>
-                  <span>
-                    <img src="/images/profile.png" />
-                    ورود | ثبت نام
-                  </span>
-                </button>
-              {/* )} */}
-            </div>
-            <Auth
-              show={!!showModal}
-              setShowModal={setShowModal}
-              onLogin={buttonText}
-            />
+            <Auth/>
           </header>
           {children}
           <footer>
