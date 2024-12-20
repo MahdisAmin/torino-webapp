@@ -1,0 +1,75 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 40px;
+}
+.container ul {
+  direction: rtl;
+  width: 284px;
+  height: 165px;
+  border: 1px solid #00000033;
+  border-radius: 10px;
+}
+.container ul li {
+  list-style: none;
+  border-bottom: 1px solid #00000033;
+  padding: 15px 0px;
+  height: 25px;
+  margin-right: -40px;
+  font-weight: 600;
+}
+.container ul li:first-child a {
+  border-bottom: none;
+  color: #28a745;
+}
+.container ul li:first-child {
+  background-color: #c9e9d0;
+  border-radius: 10px 10px 0 0;
+}
+.container a {
+  text-decoration: none;
+  color: #282828;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.profileContainer {
+  width: 872px;
+  height: 115px;
+  border-radius: 10px;
+  border: 1px solid #00000033;
+  padding: 10px;
+  margin-top: 20px;
+ 
+}
+.userInfo{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+
+}
+.userInfo div{
+    display: flex;
+    align-items: center;
+
+}
+.userInfo p{
+    margin-left: 10px;
+
+}
+.userInfo span{
+    margin-top: 5px;
+}
+.emailInfo{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emailInfo p:last-child {
+    margin-left: 55px;
+    color: #009ECA;
+    cursor: pointer;
+
+    
+}

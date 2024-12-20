@@ -26,7 +26,7 @@ export default function ReactOtpInput({ mobile, setShowModal, setStep, show }) {
         onSuccess: (data) => {
           setCookie("accessToken", data?.data?.accessToken, 30);
           setCookie("refreshToken", data?.data?.refreshToken, 365);
-          // setShowModal()
+          setShowModal(false)
         },
         onError: (error) => {
           console.log(error);

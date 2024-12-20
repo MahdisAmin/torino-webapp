@@ -1,7 +1,5 @@
-import { getCookie , setCookie} from "@/utils/cookie";
+import { getCookie, setCookie } from "@/utils/cookie";
 import axios from "axios";
-
-
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
@@ -28,19 +26,16 @@ api.interceptors.response.use(
     return response;
   },
   async (error) => {
-    const orginialRequest = error.config;
-    if (error.response.status === 401 && !orginialRequest._retry) {
-      orginialRequest._retry = true;
+    const originalRequest = error.config;
+    if (error.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
 
       const res = await getNewTokens();
       if (res?.response?.status === 200) {
         setCookie("accessToken", res?.response?.data.accessToken, 30);
         setCookie("refreshToken", res?.response?.data.refreshToken, 360);
-        return api(orginialRequest);
-      } else {
-        // setCookie("accessToken", "", 0);
-        // setCookie("refreshToken", "", 0);
-      }
+        return api(originalRequest);
+      } 
     }
     return Promise.reject(error.response.data);
   }
@@ -64,4 +59,4 @@ const getNewTokens = async () => {
     return { error };
   }
 };
-export {getNewTokens}
+export { getNewTokens };

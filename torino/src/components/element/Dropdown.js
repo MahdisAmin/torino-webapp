@@ -4,9 +4,15 @@ import { FaUser } from "react-icons/fa6";
 import { PiSignOutLight } from "react-icons/pi";
 import { CiUser } from "react-icons/ci";
 import Link from "next/link";
+import { deleteCookie } from "@/utils/cookie";
 
 function Dropdown({ show, phone }) {
   if (!show) return;
+  const exitHandler = () => {
+    deleteCookie("accessToken")
+    deleteCookie("refreshToken");
+    console.clear()
+  }
   return (
     <div className={styles.container}>
       <div className={styles.phone}>
@@ -47,7 +53,7 @@ function Dropdown({ show, phone }) {
             }}
           />
         </div>
-        <div className={styles.secondout}>
+        <div className={styles.secondout} onClick={exitHandler}>
           <h4>خروج از حساب کاربری</h4>
         </div>
       </div>

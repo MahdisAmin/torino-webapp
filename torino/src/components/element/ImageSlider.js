@@ -15,7 +15,7 @@ const ImageSlider = ({ images }) => {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={3} 
-        spaceBetween={-30} 
+        spaceBetween={-50} 
         coverflowEffect={{
           rotate: 0,
           stretch: 180, 
@@ -42,7 +42,7 @@ const ImageSlider = ({ images }) => {
                 width: "389px",
                 height: "479px",
                 objectFit: "cover",
-                borderRadius: "10px",
+                borderRadius: "40px",
               }}
             />
           </SwiperSlide>
