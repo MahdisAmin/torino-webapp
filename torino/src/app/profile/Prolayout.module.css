@@ -33,43 +33,53 @@
   margin-right: 20px;
   font-size: 14px;
 }
-.profileContainer {
+.profileContainer,
+.personProfileContainer {
   width: 872px;
   height: 115px;
   border-radius: 10px;
   border: 1px solid #00000033;
   padding: 10px;
   margin-top: 20px;
- 
 }
-.userInfo{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
-.userInfo div{
-    display: flex;
-    align-items: center;
-
+.userInfo div {
+  display: flex;
+  align-items: center;
 }
-.userInfo p{
-    margin-left: 10px;
-
+.userInfo p {
+  margin-left: 10px;
 }
-.userInfo span{
-    margin-top: 5px;
+.userInfo span {
+  margin-top: 5px;
 }
-.emailInfo{
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
+.emailInfo {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .emailInfo p:last-child {
-    margin-left: 55px;
-    color: #009ECA;
-    cursor: pointer;
-
-    
+  margin-left: 55px;
+  color: #009eca;
+  cursor: pointer;
+}
+.personInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.personProfileContainer {
+  height: 171px;
+}
+.personProfileContainer p {
+  color: #282828;
+}
+.personInfo p {
+  color: #009eca;
+  margin-left: 10px;
+  cursor: pointer;
 }
