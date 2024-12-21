@@ -28,7 +28,6 @@ function Auth() {
     
   }
 
-  if (isPending && !data?.data) return <h4>Loading...</h4>;
   if (data?.data)
     return (
       <div className={Styels.link} onClick={dropDownHandler}>
@@ -74,7 +73,7 @@ function Auth() {
       )}
       {step === 2 && (
         <ReactOtpInput
-          // show={showModal}
+          show={showModal}
           setShowModal={setShowModal}
           mobile={mobile}
           setStep={setStep}

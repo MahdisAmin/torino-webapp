@@ -7,14 +7,8 @@ import { motion } from "framer-motion";
 import { checkOtp } from "@/core/services/mutations";
 import { setCookie } from "@/utils/cookie";
 export default function ReactOtpInput({ mobile, setShowModal, setStep, show }) {
-  // if (!show) {
-  //   return null;
-  // }
   const [code, setCode] = useState("");
 
-  const handleChange = (enteredOtp) => {
-    setCode(enteredOtp);
-  };
   const { isPending, mutate } = checkOtp();
 
   const checkCodeHandler = () => {
@@ -23,16 +17,18 @@ export default function ReactOtpInput({ mobile, setShowModal, setStep, show }) {
     mutate(
       { mobile, code },
       {
-        onSuccess: (data) => {
-          setCookie("accessToken", data?.data?.accessToken, 30);
-          setCookie("refreshToken", data?.data?.refreshToken, 365);
-          setShowModal(false)
+        onSuccess: async (data) => {
+          setShowModal(false);
+          setStep(1);
         },
         onError: (error) => {
           console.log(error);
         },
       }
     );
+  };
+  const handleChange = (enteredOtp) => {
+    setCode(enteredOtp);
   };
   return (
     <div className={styles.modal}>

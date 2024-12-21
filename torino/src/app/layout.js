@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import styles from "./layout.module.css";
-import { useState } from "react";
+
+import { Toaster } from "react-hot-toast";
 
 import Footer from "../components/element/Footer";
 import Auth from "@/components/modal/Auth";
@@ -10,7 +11,7 @@ import TanstackQueryProvider from "../components/provider/TanstackQueryProvider"
 
 import Link from "next/link";
 
-import LoginButton from "@/components/LoginButton";
+
 
 export default function RootLayout({ children }) {
  
@@ -109,6 +110,7 @@ export default function RootLayout({ children }) {
             </div>
           </footer>
         </TanstackQueryProvider>
+        <Toaster/>
       </body>
     </html>
   );

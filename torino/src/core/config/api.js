@@ -1,6 +1,7 @@
 import { getCookie, setCookie } from "@/utils/cookie";
 import axios from "axios";
 
+
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   headers: {
@@ -26,15 +27,15 @@ api.interceptors.response.use(
     return response;
   },
   async (error) => {
-    const originalRequest = error.config;
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
+    const orginialRequest = error.config;
+    if (error.response.status === 401 && !orginialRequest._retry) {
+      orginialRequest._retry = true;
 
       const res = await getNewTokens();
-      if (res?.response?.status === 200) {
+      if (res?.response?.status === 201) {
         setCookie("accessToken", res?.response?.data.accessToken, 30);
         setCookie("refreshToken", res?.response?.data.refreshToken, 360);
-        return api(originalRequest);
+        return api(orginialRequest);
       } 
     }
     return Promise.reject(error.response.data);
@@ -46,7 +47,6 @@ export default api;
 const getNewTokens = async () => {
   const refreshToken = getCookie("refreshToken");
   if (!refreshToken) return;
-
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_BASE_URL}auth/refresh-token`,
@@ -59,4 +59,3 @@ const getNewTokens = async () => {
     return { error };
   }
 };
-export { getNewTokens };

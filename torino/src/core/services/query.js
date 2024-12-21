@@ -6,5 +6,9 @@ const useGetUserData = () => {
   const queryKey = ["user-data"];
   return useQuery({ queryFn, queryKey });
 };
-
-export { useGetUserData };
+const useGetBasket = () => {
+  const queryFn = () => api.get("/basket")
+  const queryKey = ["basket"]
+  return useQuery({queryKey , queryFn})
+}
+export { useGetUserData  , useGetBasket};

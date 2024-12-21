@@ -13,7 +13,7 @@ function Profile({ children }) {
         <div className={styles.userInfo}>
           <div>
             <p>شماره موبایل:</p>
-            <span>{toPersianNumber(data?.data.mobile)}</span>
+            <span>{(data?.data.mobile)}</span>
           </div>
           <div className={styles.emailInfo}>
             <p>ایمیل:</p>

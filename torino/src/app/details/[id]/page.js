@@ -7,6 +7,7 @@ import { SiSpringsecurity } from "react-icons/si";
 import { FaBusSimple } from "react-icons/fa6";
 import Link from "next/link";
 import moment from "jalali-moment";
+import { useAddToBasket } from "@/core/services/mutations";
 async function fetchData(id) {
   const res = await fetch(`http://localhost:6500/tour/${id}`, {
     cache: "no-store",
@@ -29,7 +30,9 @@ async function DetailPage({ params }) {
     fleetVehicle,
     availableSeats,
     insurance,
+    id
   } = data;
+ 
 
   const perStartDay = moment(startDate, "YYYY-MM-DD")
     .locale("fa")
