@@ -3,10 +3,12 @@
   margin: auto;
   padding: 8px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
   border: 1px solid #00000026;
 }
 .container input {
-    width: 190px;
+  width: 190px;
   font-family: inherit;
   outline: none;
   margin-right: 5px;
@@ -14,8 +16,8 @@
   border: 0;
   border-left: 1px solid #00000026;
 }
-.container input::placeholder{
-    margin-top: -10px;
+.container input::placeholder {
+  margin-top: -10px;
 }
 
 .container button {
@@ -28,8 +30,46 @@
   background: #28a745;
   font-weight: 600;
 }
-.icon{
+.icon {
   margin-right: 5px;
   height: 15px;
-  margin-bottom: -4px;
+  margin-bottom: 4px;
+}
+.dateContainer {
+  display: flex;
+  width: 25%;
+  box-shadow: none;
+}
+
+.dateContainer button {
+  background-color: transparent;
+}
+.dateContainer button:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+.dateContainer div {
+  width: 270px;
+  color: #28a745;
+}
+.dateContainer span {
+  color: #282828;
+}
+
+.dateContainer i {
+  border: solid #28a745;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 3px;
+  margin-top: 5px;
+  padding: 2px;
+  width: 3px;
+}
+.dateContainer i:hover {
+  border: solid black;
+}
+.rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: #28a745;
+  box-shadow: 0 0 3px #8798ad;
+  color: #fff;
 }
